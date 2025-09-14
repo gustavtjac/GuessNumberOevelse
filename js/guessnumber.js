@@ -18,6 +18,8 @@ guessButton.style.display = "block";
 
 
 function makeGuess (guess){
+
+
     console.log(guess)
     if (!guess){
         message.innerHTML = "Not a number!!!"
@@ -43,6 +45,12 @@ function makeGuess (guess){
         score.textContent = parseInt(score.textContent) - 1;
     }
 
+    if (parseInt(score.textContent) === 0){
+        message.innerHTML = "You lost!!!"
+        guessButton.style.display = "none";
+        resetBtn.style.display = "block"
+
+    }
 
 }
 
